@@ -1,24 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import AnimeList from './AnimeList';
+import AnimeDetail from './AnimeDetail';
+import EpisodePlayer from './EpisodePlayer';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <nav>
+        <Link to="/">Anime-Viewer</Link>
+      </nav>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<AnimeList />} />
+          <Route path="/anime/:id" element={<AnimeDetail />} />
+          <Route path="/anime/:name/episode/:episode" element={<EpisodePlayer />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

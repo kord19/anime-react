@@ -1,38 +1,503 @@
-.App {
+/* src/App.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #333;
+  color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+  background: #007bff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #fff;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background: #007bff;
+  color: #fff;
+  padding: 2rem 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main Content */
+.main-content {
+  background: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Anime List */
+.anime-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Anime List Item */
+.anime-list-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  width: calc(25% - 1rem); /* Reduzido de 33.333% para 25% */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.anime-list-item img {
+  width: 100%;
+  height: auto;
+}
+
+
+.anime-list-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.anime-list-item img {
+  width: 100%;
+  height: auto;
+}
+
+.anime-list-item h3 {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Anime Detail */
+.anime-detail {
+  text-align: center;
+}
+
+.anime-detail h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.anime-detail p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.anime-detail button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.anime-detail button:hover {
+  background: #0056b3;
+}
+
+/* Player */
+/* Player */
+.player-wrapper {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  padding-top: 45%;
+  background: #000;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.episode-controls {
+  margin-top: 0.5rem; /* Reduzido de 1rem para 0.5rem */
+  text-align: center;
+}
+
+.episode-controls button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.episode-controls button:hover {
+  background: #0056b3;
+}
+
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #007bff;
+  padding: 0.5rem 0;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-bar .search-icon {
+  font-size: 1.5rem;
+  color: #007bff;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid #007bff;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: #0056b3;
+}
+
+/* Anime Detail */
+.anime-detail {
+  text-align: center;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.anime-detail .anime-banner {
+  margin-bottom: 2rem;
+}
+
+.anime-detail .anime-banner img {
+  width: 100%;
+  max-width: 500px; /* Ajuste o tamanho máximo do banner */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.anime-detail h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.anime-detail p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.anime-detail button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.anime-detail button:hover {
+  background: #0056b3;
+}
+
+.episode-list {
+  margin-top: 2rem;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.episode-list-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.episode-list-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.episode-list-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.episode-list-item button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.episode-list-item button:hover {
+  background: #0056b3;
+}
+
+.next-season-button {
+  background: #28a745; /* Verde para a próxima temporada */
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.next-season-button:hover {
+  background: #218838;
+}
+
+.anime-detail .description {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #666;
+}
+
+.anime-detail .episode-count {
+  font-size: 1rem;
+  color: #333;
+}
+
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  width: 100%;
+  text-align: left;
+}
+
+/* Dropdown Button Hover */
+.dropdown-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+/* Show Dropdown Content */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Dropdown Item */
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+/* Dropdown Item Hover */
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+/* Last Dropdown Item (No Bottom Border) */
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+
+/* Episode List */
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.episode-list-item {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.episode-list-item:hover {
+  background: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.episode-list-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.episode-list-item button {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.episode-list-item button:hover {
+  background: #0056b3;
+}
+
+/* Anime List Filters */
+.filters {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.letter-buttons {
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.letter-buttons button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  margin: 0.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
+
+.letter-buttons button:hover {
+  background: #0056b3;
+}
+
+.genre-filter {
+  margin-bottom: 1rem;
+}
+
+.genre-filter label {
+  margin-right: 0.5rem;
+}
+
+.genre-filter select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+

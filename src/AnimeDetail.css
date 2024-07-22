@@ -1,0 +1,95 @@
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .anime-banner img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
+  
+  .anime-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .anime-info h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .anime-info p {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+  
+  .episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .episode-button {
+    margin: 5px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .episode-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .next-season-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .next-season-button:hover {
+    background-color: #218838;
+  }
+  
+  .suggested-anime {
+    margin-top: 40px;
+    width: 100%;
+  }
+  
+  .suggested-anime h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .suggested-anime-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .suggested-anime-item {
+    text-align: center;
+    width: 200px;
+  }
+  
+  .suggested-anime-item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .suggested-anime-item h3 {
+    margin-top: 10px;
+    font-size: 1em;
+  }
+  
